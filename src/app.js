@@ -7,10 +7,18 @@ app.use(express.static('public'));
 app.set ( 'view engine', 'ejs' );
 
 app.get('/', (req, res) => {
-    //res.send('Hello World!');
-    res.render ('index');		
+    res.render ('index', 
+        { 
+            products : 
+            [
+                { url: 'images/product-a.jpg' },
+                { url: 'images/product-b.jpg' },
+                { url: 'images/product-c.jpg' },
+            ]
+        }
+    );		
 });
 
 app.listen(port, () => {
-    console.log(`Example app listening at http://localhost:${port}`)
+    console.log(`The app listening at http://localhost:${port}`)
 });

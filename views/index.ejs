@@ -7,11 +7,14 @@
 </head>
 
 <body>
-
     <h1>ข้าวต้มมัดยายเขียด</h1>
-    <img class="product-thumbnail" src="images/product-a.jpg">
-    <img class="product-thumbnail" src="images/product-b.jpg">
-    <img class="product-thumbnail" src="images/product-c.jpg">
+    <ul>
+    <% products.forEach(product => { %>
+        <li>
+            <img src="<%=product.url%>" class="product-thumbnail">
+        </li>
+    <% }); %>
+    </ul>
 </body>
 
 </html>
